@@ -1,0 +1,25 @@
+.guess {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+.guessComponent {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin: 5px;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 3rem; 
+    font-size: 1.5rem;
+}
+
+.guessComponent.noBackground{
+    background-color: transparent;
+    border: none;
+}
