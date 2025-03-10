@@ -1,9 +1,9 @@
-export const GuessComponent = ({ nonLetter }) => {
-    const className = `guessComponent ${nonLetter !== '' ? 'noBackground' : ''}`;
+export const GuessComponent = ({ guessed }) => {
+    const className = `guessComponent ${guessed !== '' ? 'noBackground' : ''}`;
 
     return (
         <span className={className}>
-            {nonLetter}
+            {guessed.toUpperCase()}
         </span>
     );
 };

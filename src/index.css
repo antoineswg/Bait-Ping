@@ -22,4 +22,7 @@
 .guessComponent.noBackground{
     background-color: transparent;
     border: none;
+    width: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
 }
