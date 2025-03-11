@@ -69,8 +69,7 @@ function App() {
       <Header language={language} setLanguage={setLanguage} locale={locale} setLocale={setLocale} data={headerData} setWord={setWord}/>
       <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} errors={errors} setErrors={setErrors} maxErrors={maxerrors}/>
       <Keyboard language={language} deactivatedKeys={deactivatedKeys} setDeactivatedKeys={setDeactivatedKeys} errors={errors} maxErrors={maxerrors} />
-      <EndScreen wOrL={wOrL}/>
-      {errors}
+      <EndScreen wOrL={wOrL} locale={locale} setLocale={setLocale} setWord={setWord} word={word}/>
     </div>
   );
 }
