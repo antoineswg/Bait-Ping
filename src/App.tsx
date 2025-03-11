@@ -18,6 +18,8 @@ function App() {
 
   const [errors, setErrors] = useState(0);
 
+  const maxerrors = 6;
+
   const [deactivatedKeys, setDeactivatedKeys] = useState(() => {
     const savedKeys = localStorage.getItem('deactivatedKeys');
     return savedKeys ? JSON.parse(savedKeys) : [];
@@ -44,7 +46,7 @@ function App() {
           localStorage.setItem('word', data.word);
           setErrors(0);
           setDeactivatedKeys([]);
-          setWOrL(''); // Reset wOrL when a new word is fetched
+          setWOrL('');
         })
         .catch(error => console.error('Error:', error));
     }
@@ -65,8 +67,8 @@ function App() {
   return (
     <div>
       <Header language={language} setLanguage={setLanguage} locale={locale} setLocale={setLocale} data={headerData} setWord={setWord}/>
-      <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} setErrors={setErrors}/>
-      <Keyboard language={language} deactivatedKeys={deactivatedKeys} setDeactivatedKeys={setDeactivatedKeys} />
+      <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} errors={errors} setErrors={setErrors} maxErrors={maxerrors}/>
+      <Keyboard language={language} deactivatedKeys={deactivatedKeys} setDeactivatedKeys={setDeactivatedKeys} errors={errors} maxErrors={maxerrors} />
       <EndScreen wOrL={wOrL}/>
       {errors}
     </div>

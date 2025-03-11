@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { GuessComponent } from './GuessComponent';
 
-export const Guess = ({ wordLength, word, guesses, setWOrL, setErrors }) => {
+export const Guess = ({ wordLength, word, guesses, setWOrL, errors, setErrors, maxErrors }) => {
     useEffect(() => {
         const allLettersGuessed = word
             .split('')
@@ -13,7 +13,14 @@ export const Guess = ({ wordLength, word, guesses, setWOrL, setErrors }) => {
         if (allLettersGuessed) {
             setWOrL('win');
         }
-    }, [word, guesses, setWOrL]);
+
+        const incorrectGuesses = guesses.filter(guess => !word.toUpperCase().includes(guess));
+        setErrors(incorrectGuesses.length);
+    }, [word, guesses, setWOrL, setErrors]);
+
+    if (errors >= maxErrors) {
+        setWOrL('lose');
+    }
 
     return (
         <div className='guess'>

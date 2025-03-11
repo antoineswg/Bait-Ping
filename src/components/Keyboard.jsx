@@ -1,4 +1,4 @@
-export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys }) => {
+export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys, errors, maxErrors }) => {
 
     const printKeyboard = (layout) => {
         return (
@@ -9,7 +9,7 @@ export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys }) => {
                             <button 
                                 key={keyIndex} 
                                 onClick={guess} 
-                                disabled={deactivatedKeys.includes(key)}
+                                disabled={deactivatedKeys.includes(key) || errors >= maxErrors}
                             >
                                 {key}
                             </button>
