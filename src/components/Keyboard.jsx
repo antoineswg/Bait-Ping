@@ -1,4 +1,4 @@
-export const Keyboard = ({ language, stage, setStage, deactivatedKeys, setDeactivatedKeys }) => {
+export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys }) => {
 
     const printKeyboard = (layout) => {
         return (
@@ -36,10 +36,6 @@ export const Keyboard = ({ language, stage, setStage, deactivatedKeys, setDeacti
         const key = event.target.innerText;
         event.target.setAttribute('disabled', 'disabled');
         setDeactivatedKeys(prevKeys => [...prevKeys, key]);
-        setStage(prevStage => {
-            const newStage = prevStage + 1;
-            return newStage;
-        });
     }
 
     return (
