@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Guess } from './components/Guess';
 import { Keyboard } from './components/Keyboard';
 import { EndScreen } from './components/EndScreen';
+import { Hanged } from './components/Hanged';
 import headerContent from './content/header.json';
 
 function App() {
@@ -67,7 +68,8 @@ function App() {
   return (
     <div>
       <Header language={language} setLanguage={setLanguage} locale={locale} setLocale={setLocale} data={headerData} setWord={setWord}/>
-      <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} errors={errors} setErrors={setErrors} maxErrors={maxerrors}/>
+      <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} errors={errors} setErrors={setErrors} maxErrors={maxerrors}/>  
+      <Hanged errors={errors} />
       <Keyboard language={language} deactivatedKeys={deactivatedKeys} setDeactivatedKeys={setDeactivatedKeys} errors={errors} maxErrors={maxerrors} />
       <EndScreen wOrL={wOrL} locale={locale} setLocale={setLocale} setWord={setWord} word={word} language={language} errors={errors}/>
     </div>
