@@ -8,7 +8,7 @@ export const Guess = ({ wordLength, word, guesses, setWOrL, errors, setErrors, m
             .filter(letter => /[a-zA-Z]/.test(letter))
             .every(letter => guesses.includes(letter.toUpperCase()));
 
-        if (allLettersGuessed) {
+        if (allLettersGuessed && word.length !== 0) {
             setWOrL('win');
         }
 
