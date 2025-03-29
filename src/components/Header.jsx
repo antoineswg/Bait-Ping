@@ -45,13 +45,17 @@ export const Header = ({ language, setLanguage, locale, setLocale, data, setWord
   
 
   return (
-    <div>
-      <button onClick={changeLanguage}>changer la langue</button>
-      <button onClick={changeLocale}>changer le jeu</button>
-      <button onClick={changeWord}>changer de personnage</button>
+    <header>
+      <div className="headerButtons">
+      <button onClick={changeLanguage}>{data.changelanguage}</button>
+      <button onClick={changeLocale}>{data.changegame}</button>
+      <button onClick={changeWord}>{data.changeword}</button>
+      </div>
       <br />
-      <h1>{data.test1} {language === "fr" ? "français" : "english"} {data.test2} {locale === "lol" ? "League of Legends" : "Valorant"}</h1>
-    </div>
+      <div>
+      <h1>{data.goal}{locale === "lol" ? "League of Legends" : "Valorant"}</h1>
+      </div>
+    </header>
 
   );
 };

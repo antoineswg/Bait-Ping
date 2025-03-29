@@ -1,4 +1,4 @@
-export const EndScreen = ({ wOrL, locale, setLocale, setWord, word, language, errors }) => {
+export const EndScreen = ({ wOrL, locale, setLocale, setWord, word, language, errors, data }) => {
 
     function changeLocale() {
         switch (locale) {
@@ -43,11 +43,11 @@ export const EndScreen = ({ wOrL, locale, setLocale, setWord, word, language, er
             return (
                 <div className="endScreen">
                     <div className="endScreenContent">
-                        <h1>Gagné ! Vous avez correctement deviné {word.toUpperCase()}</h1>
-                        <div>
-                            <button onClick={changeLocale}>Changer de jeu</button>
-                            <button onClick={changeWord}>Changer de personnage</button>
-                            <button onClick={shareTwitter}>Partager sur Twitter</button>
+                        <h1>{data.h1W}{word.toUpperCase()}</h1>
+                        <div className="endScreenContentButtons">
+                            <button onClick={changeLocale}>{data.changegame}</button>
+                            <button onClick={changeWord}>{data.changeword}</button>
+                            <button onClick={shareTwitter}>{data.share}</button>
                         </div>
                     </div>
                 </div>
@@ -56,10 +56,10 @@ export const EndScreen = ({ wOrL, locale, setLocale, setWord, word, language, er
             return (
                 <div className="endScreen">
                     <div className="endScreenContent">
-                        <h1>Perdu, le personnage était {word.toUpperCase()}</h1>
-                        <div>
-                            <button onClick={changeLocale}>Changer de jeu</button>
-                            <button onClick={changeWord}>Changer de personnage</button>
+                        <h1>{data.h1L}{word.toUpperCase()}</h1>
+                        <div className="endScreenContentButtons">
+                        <button onClick={changeLocale}>{data.changegame}</button>
+                        <button onClick={changeWord}>{data.changeword}</button>
                         </div>
                     </div>
                 </div>

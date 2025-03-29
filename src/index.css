@@ -1,5 +1,96 @@
-body{
+:root {
+    --lol-primary: #010A13;
+    --lol-title: #C89B3C;
+    --lol-text: #ebebeb;
+    --lol-gold-gradient: linear-gradient(90deg, #785A28 0%, #C89B3C 100%);
+
+    --val-primary: #fff;
+    --val-title: #ff4654;
+    --val-text: #111823;
+
+    --mono: "Rubik Mono One", monospace;
+    --bevietnam: "Be Vietnam Pro", sans-serif;
+}
+
+body {
     margin: 0;
+    font-family: var(--bevietnam)
+}
+
+.val,
+.lol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header button {
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: var(--bevietnam);
+}
+
+header h1 {
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+.headerButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.lol header button {
+    color: var(--lol-title);
+    color: var(--lol-title);
+    border: solid 2px #785A28;
+    transition: .2s;
+}
+
+.val header button {
+    color: var(--val-title);
+    background: var(--val-primary);
+    border: solid 2px var(--val-title);
+    transition: .2s;
+}
+
+.lol header button:hover {
+    border: solid 2px var(--lol-title);
+    transition: .2s;
+}
+
+
+.lol {
+    background: var(--lol-primary);
+    color: var(--lol-text);
+    height: 100vh;
+}
+
+.lol ::selection {
+    background: var(--lol-title);
+    color: var(--lol-primary);
+}
+
+.val {
+    background: #fff;
+    color: var(--val-text);
+    height: 100vh;
+}
+
+.val ::selection {
+    background: var(--val-title);
+    color: var(--val-primary);
 }
 
 .guess {
@@ -8,6 +99,7 @@ body{
     height: 100vh;
     flex-wrap: wrap;
     height: 100px;
+    font-family: monospace;
 }
 
 .guessComponent {
@@ -19,11 +111,11 @@ body{
     width: 2.5rem;
     height: 2.5rem;
     text-align: center;
-    line-height: 3rem; 
+    line-height: 3rem;
     font-size: 1.5rem;
 }
 
-.guessComponent.noBackground{
+.guessComponent.noBackground {
     background-color: transparent;
     border: none;
     width: 1.5rem;
@@ -31,7 +123,7 @@ body{
     margin-right: 0;
 }
 
-.endScreen{
+.endScreen {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -42,15 +134,115 @@ body{
     align-items: center;
 }
 
-.endScreenContent{
+.endScreenContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 40%;
     max-width: 80%;
-    background-color: #f0f0f0;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
+}
+
+.endScreenContentButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.endScreenContentButtons button {
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: var(--bevietnam);
+}
+
+.val .endScreenContentButtons button {
+    color: var(--val-title);
+    background: var(--val-primary);
+    border: solid 2px var(--val-title);
+    transition: .2s;
+}
+
+.lol .endScreenContentButtons button {
+    color: var(--lol-title);
+    background: var(--lol-primary);
+    border: solid 2px var(--lol-title);
+    transition: .2s;
+}
+
+.lol .endScreenContent {
+    border: var(--lol-title) solid 2px;
+    background: var(--lol-primary);
+}
+
+.val .endScreenContent {
+    border: var(--val-title) solid 2px;
+    background: var(--val-primary);
+}
+
+.hanged img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    border-radius: 15px;
+}
+
+.lol .hanged img {
+    border: var(--lol-title) solid 2px;
+}
+
+.val .hanged img {
+    border: var(--val-title) solid 2px;
+}
+
+.keyboard {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.keyboard div {
+    height: 33px;
+    display: flex;
+    gap: 2px;
+}
+
+.keyboard button {
+    width: 33px;
+    border-radius: 8px;
+}
+
+.lol .keyboard button {
+    background: var(--lol-primary);
+    color: var(--lol-text);
+    border: solid 2px var(--lol-title);
+    transition: .2s;
+}
+
+.lol .keyboard button:disabled {
+    background: var(--lol-primary);
+    border: solid 2px var(--lol-primary);
+    color: #747474;
+    transition: .2s;
+}
+
+.val .keyboard button {
+    background: var(--val-primary);
+    color: var(--val-text);
+    border: solid 2px var(--val-title);
+    transition: .2s;
+}
+
+.val .keyboard button:disabled {
+    background: var(--val-primary);
+    border: solid 2px var(--val-primary);
+    color: #747474;
+    transition: .2s;
 }

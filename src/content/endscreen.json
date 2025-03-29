@@ -1,0 +1,16 @@
+{
+    "fr": {
+        "h1W": "Gagné ! Vous avez correctement deviné ",
+        "h1L":"Perdu, le personnage était ",
+        "changegame": "Changer de jeu",
+        "changeword": "Changer de personnage",
+        "share": "Partager sur twitter"
+    },
+    "en": {
+        "h1": "Congrats ! You correctly guessed  ",
+        "h1L":"You lost, the character was ",
+        "changegame": "Change game",
+        "changeword": "Change character",
+        "share": "Share on twitter"
+    }
+}

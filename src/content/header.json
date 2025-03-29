@@ -1,10 +1,14 @@
 {
     "fr": {
-        "test1": "Là le site est en",
-        "test2": "et le jeu est"
+        "changelanguage":"Changer de langue",
+        "changegame":"Changer de jeu",
+        "changeword":"Changer de personnage",
+        "goal":"Vous devez deviner un personnage de "
     },
     "en": {
-        "test1": "The website is currently in",
-        "test2": "and the game is"
+        "changelanguage":"Change language",
+        "changegame":"Change game",
+        "changeword":"Change character",
+        "goal":"You have to guess a character from "
     }
 }

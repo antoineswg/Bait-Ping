@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/declarations.d.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/endscreen.jsx","./src/components/guess.jsx","./src/components/guesscomponent.jsx","./src/components/hanged.jsx","./src/components/header.jsx","./src/components/keyboard.jsx"],"errors":true,"version":"5.7.3"}

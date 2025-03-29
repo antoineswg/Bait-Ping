@@ -2,7 +2,7 @@ export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys, errors
 
     const printKeyboard = (layout) => {
         return (
-            <div>
+            <>
                 {layout.map((row, rowIndex) => (
                     <div key={rowIndex}>
                         {row.map((key, keyIndex) => (
@@ -16,7 +16,7 @@ export const Keyboard = ({ language, deactivatedKeys, setDeactivatedKeys, errors
                         ))}
                     </div>
                 ))}
-            </div>
+            </>
         );
     };
 

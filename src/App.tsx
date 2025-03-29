@@ -4,7 +4,9 @@ import { Guess } from './components/Guess';
 import { Keyboard } from './components/Keyboard';
 import { EndScreen } from './components/EndScreen';
 import { Hanged } from './components/Hanged';
+
 import headerContent from './content/header.json';
+import enscreenContent from './content/endscreen.json';
 
 function App() {
   const [word, setWord] = useState(() => {
@@ -64,14 +66,15 @@ function App() {
   const wordLength = word.length;
 
   const headerData = headerContent[language];
+  const endScreenData = enscreenContent[language];
 
   return (
-    <div>
+    <div className={locale}>
       <Header language={language} setLanguage={setLanguage} locale={locale} setLocale={setLocale} data={headerData} setWord={setWord}/>
       <Guess wordLength={wordLength} word={word} guesses={deactivatedKeys} setWOrL={setWOrL} errors={errors} setErrors={setErrors} maxErrors={maxerrors}/>  
       <Hanged errors={errors} />
       <Keyboard language={language} deactivatedKeys={deactivatedKeys} setDeactivatedKeys={setDeactivatedKeys} errors={errors} maxErrors={maxerrors} />
-      <EndScreen wOrL={wOrL} locale={locale} setLocale={setLocale} setWord={setWord} word={word} language={language} errors={errors}/>
+      <EndScreen wOrL={wOrL} locale={locale} setLocale={setLocale} setWord={setWord} word={word} language={language} errors={errors} data={endScreenData}/>
     </div>
   );
 }
